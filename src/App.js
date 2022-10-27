@@ -1,6 +1,7 @@
 import CryptoSearch from "./components/CryptoSearch";
 import NavigationBar from "./components/NavigationBar";
 import NewsFeed from "./components/NewsFeed";
+import Others from "./components/Others";
 import Trending from "./components/Trending";
 import WatchList from "./components/WatchList";
 
@@ -24,12 +25,13 @@ function App() {
           <CryptoSearch />
         </div>
         <div className="flex flex-col w-1/6 h-full place-content-between flex-wrap">
-          <div className="bg-white border bg-opacity-75 rounded-md p-2 h-2/5 w-full">
+          <div className="bg-white border bg-opacity-75 rounded-md flex flex-col p-2 h-2/5 w-full">
             <h2 className="text-2xl font-light">Trending</h2>
             <Trending  />
           </div>
-          <div className="bg-white border bg-opacity-75 rounded-md p-2 h-3/6 w-full">
+          <div className="bg-white border bg-opacity-75 rounded-md flex flex-col p-2 h-3/6 w-full">
             <h2 className="text-2xl font-light">Others are Watching</h2>
+            <Others />
           </div>
         </div>
       </div>

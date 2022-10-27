@@ -27,7 +27,7 @@ const NewsFeed = () => {
             
             {
                 newsArticles.slice(0, 6).map(article => {
-                    return <ArticleTab  data={article} />
+                    return <ArticleTab  data={article} key={article.id} />
                 })
             }
             

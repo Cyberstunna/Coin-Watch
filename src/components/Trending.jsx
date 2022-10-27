@@ -26,7 +26,7 @@ const Trending = () => {
         <div className="w-full h-5/6 flex flex-row flex-wrap overflow-y-scroll no-scrollbar">
             {
                 trendList.coins.map(item=>{
-                    return <TrendIcons  data={item} />
+                    return <TrendIcons  data={item} key={item.id} />
                 })
             }
         </div> :
