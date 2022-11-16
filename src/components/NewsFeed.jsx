@@ -8,8 +8,10 @@ const NewsFeed = () => {
 
     const getFeed = async (articles) => {
         try {
-            const resp = await axios.get(`http://localhost:8000/api/getNews`);
+            const resp = await axios.get(`https://damp-oasis-97179.herokuapp.com/`);
+            console.log(resp)
             setNewsArticles(resp.data);
+            //console.log(resp.data)
         } 
         catch (err) {
             console.error(err);
