@@ -60,8 +60,4 @@ export class WatchListMap {
             }
         }
     }
-
-    content(){
-        return this.list;
-    }
 }

@@ -1,6 +1,5 @@
 import {React, useState, useEffect, Fragment} from "react";
 import axios from "axios";
-import ScrollableAreaX from "../utils/Scroll";
 
 const NewsFeed = () => {
 
@@ -9,12 +8,9 @@ const NewsFeed = () => {
     const getFeed = async (articles) => {
         try {
             const resp = await axios.get(`https://damp-oasis-97179.herokuapp.com/`);
-            console.log(resp)
             setNewsArticles(resp.data);
-            //console.log(resp.data)
         } 
         catch (err) {
-            console.error(err);
         }
     };
 
@@ -63,7 +59,7 @@ const ArticleTab = ({data}) =>{
                         {contentLabel()}
                     </div>
                     <div className="text-wrap h-2/3">
-                        <p className="text-xs text-ellipsis overflow-hidden">{data.title}</p>
+                        <p className="text-xs text-ellipsis overflow-hidden h-full">{data.title}</p>
                     </div>
                 </div>
             </a>

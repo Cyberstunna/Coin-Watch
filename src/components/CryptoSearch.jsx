@@ -1,4 +1,4 @@
-import {React, useState, useEffect, Fragment} from "react";
+import {React, useState, Fragment} from "react";
 import axios from "axios";
 
 
@@ -20,7 +20,6 @@ const CryptoSearch = ({addToMap}) => {
                 setQueryResult(resp.data);
             } catch (err) {
                 // Handle Error Here
-                console.error(err);
             }
         };
         marketSearch();
@@ -44,7 +43,7 @@ const CryptoSearch = ({addToMap}) => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                         </svg></div> :
                         <div>{queryResult.coins.slice(0, 6).map(result=>{
-                            return <SearchCard  data={result} key={result.id} addFunction={addToMap} />
+                            return <SearchCard  data={result} addFunction={addToMap} />
                         })}</div>
                     }
                 </div> : <div className="m-auto font-light"><p>Empty Search</p></div>
@@ -53,7 +52,7 @@ const CryptoSearch = ({addToMap}) => {
     )
 };
 
-const SearchCard = ({data , key , addFunction}) => {
+const SearchCard = ({data, addFunction}) => {
 
     const addToWatchList = (e) => {
         let id = e.target.id;

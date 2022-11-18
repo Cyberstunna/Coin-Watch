@@ -1,10 +1,9 @@
-import {React, useState, useEffect} from "react";
-import axios from "axios";
+import {React} from "react";
 
 const Others = () => {
     return(
-        <div className="m-auto font-light w-full h-3/5">
-            <span>Nothing to see here!</span>
+        <div className="my-auto font-light w-full h-3/5">
+            <span className="">Nothing to see here!</span>
         </div>
     )
 }

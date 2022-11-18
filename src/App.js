@@ -1,4 +1,4 @@
-import {React, useState, useEffect, useRef} from "react";
+import {React, useState, useRef} from "react";
 import CryptoSearch from "./components/CryptoSearch";
 import NavigationBar from "./components/NavigationBar";
 import NewsFeed from "./components/NewsFeed";
@@ -12,14 +12,10 @@ function App() {
   const [watchList, setWatchList] = useState([]);
   const sessionWatchList = useRef(new WatchListMap())
 
-  // useEffect(()=>{
-  // },)
-
   const addToMap = (id) => {
     if(watchList.length === 0){setWatchList([id])}
     else if(watchList.length > 0){setWatchList([id, ...watchList])}
-    console.log(sessionWatchList.current.addKey(id));
-
+    sessionWatchList.current.addKey(id);
   }
 
   return (
@@ -54,7 +50,7 @@ function App() {
         </div>
         
       </div>
-      <div className="mt-5">
+      <div className="mt-5 hidden">
           <h2 className="text-2xl font-light">More News</h2>
       </div>
       <div className="mx-auto text-center font-light text-slate-400 bg-white bg-opacity-75">
