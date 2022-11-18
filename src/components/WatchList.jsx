@@ -1,5 +1,4 @@
-import {React, useState, useEffect, useRef} from "react";
-import axios from "axios";
+import {React, useEffect} from "react";
 
 const WatchList = ({sessionWatchList}) => {
   const keys = Object.keys(sessionWatchList.current.list)
